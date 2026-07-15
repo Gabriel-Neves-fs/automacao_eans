@@ -1,0 +1,15 @@
+.env
+.venv/
+
+*.xlsx
+*.xls
+*.xlsm
+*.csv
+
+__pycache__/
+*.py[cod]
+
+*.docx
+*.png
+
+execution_report.*

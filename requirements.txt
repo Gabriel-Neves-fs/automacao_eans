@@ -1,0 +1,5 @@
+aiohttp
+pandas
+openpyxl
+python-dotenv
+rich
