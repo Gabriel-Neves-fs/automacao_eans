@@ -1,4 +1,4 @@
-# Automacao de EANs na VTEX
+# Automação de EANs na VTEX
 
 Este projeto nasceu de uma necessidade bem prática: atualizar os EANs de mais de 200 produtos na VTEX sem precisar fazer tudo manualmente pelo painel. Como o volume era grande e o processo repetitivo, a solução foi automatizar a alteração usando a API de catálogo da VTEX.
 
@@ -6,9 +6,9 @@ A automação lê uma planilha com os SKUs e seus novos EANs, consulta o EAN atu
 
 ## O que o projeto faz
 
-- Le uma planilha Excel com as colunas `SKU` e `ean`.
+- Lê uma planilha Excel com as colunas `SKU` e `ean`.
 - Consulta os EANs já cadastrados no SKU via API da VTEX.
-- Mantem o SKU intacto quando o EAN informado já está correto.
+- Mantém o SKU intacto quando o EAN informado já está correto.
 - Simula as alterações com `--dry-run` antes de gravar dados.
 - Remove EANs antigos e cadastra o novo EAN quando executado com `--no-dry-run`.
 - Gera um relatório final em `execution_report.xlsx` com o resultado de cada linha.
@@ -48,10 +48,10 @@ O arquivo `.env` não deve ser enviado ao GitHub.
 
 A planilha precisa ter estas colunas:
 
-| Coluna | Descricao |
+| Coluna | Descrição |
 | --- | --- |
 | `SKU` | ID do SKU na VTEX |
-| `ean` | Novo codigo de barras que será cadastrado |
+| `ean` | Novo código de barras que será cadastrado |
 
 Exemplo:
 
@@ -60,7 +60,7 @@ Exemplo:
 | 1001 | 7890000000001 |
 | 1002 | 7890000000002 |
 
-Dica: formate as colunas como texto no Excel para evitar que os codigos sejam convertidos para notacao cientifica ou recebam `.0` no final.
+Dica: formate as colunas como texto no Excel para evitar que os códigos sejam convertidos para notação científica ou recebam `.0` no final.
 
 ## Como usar
 
@@ -76,13 +76,13 @@ Quando o resultado estiver correto, execute a alteração real:
 python vtex_ean_automation.py --file sua_planilha.xlsx --no-dry-run
 ```
 
-Para controlar a quantidade de requisições simultaneas:
+Para controlar a quantidade de requisições simultâneas:
 
 ```powershell
 python vtex_ean_automation.py --file sua_planilha.xlsx --no-dry-run --concurrency 5
 ```
 
-## Relatorio
+## Relatório
 
 Ao final, o script gera `execution_report.xlsx` com os dados processados e as colunas de status.
 
